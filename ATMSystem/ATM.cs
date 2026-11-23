@@ -25,16 +25,16 @@ public class ATM
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("\t================================");
-                Console.WriteLine("\t           ATM MACHINE          ");
-                Console.WriteLine("\t================================");
+                CenterLine("================================");
+                CenterLine("ATM MACHINE");
+                CenterLine("================================");
                 Console.ResetColor();
 
-                Console.WriteLine("\n\n\t  [1] Login");
-                Console.WriteLine("\t  [2] Create Account");
-                Console.WriteLine("\t  [3] Admin");
-                Console.WriteLine("\t  [4] Exit");
-                Console.Write("\n\tEnter choice : ");
+                CenterLine("[1] Login");
+                CenterLine("[2] Create Account");
+                CenterLine("[3] Admin");
+                CenterLine("[4] Exit");
+                CenterWrite("Enter choice : ");
 
                 int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -71,9 +71,9 @@ public class ATM
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("\t================================");
-            Console.WriteLine("\t           ATM MACHINE          ");
-            Console.WriteLine("\t================================");
+            CenterLine("================================");
+            CenterLine("ATM MACHINE");
+            CenterLine("================================");
             Console.WriteLine("\t              Login             ");
             Console.ResetColor();
 
@@ -133,10 +133,10 @@ public class ATM
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("\t================================");
-            Console.WriteLine("\t           ATM MACHINE          ");
-            Console.WriteLine("\t================================");
-            Console.WriteLine("\t           Admin Login          ");
+            CenterLine("================================");
+            CenterLine("ATM MACHINE");
+            CenterLine("================================");
+            CenterLine("Admin Login");
             Console.ResetColor();
 
             Console.WriteLine("\n\tEnter [Q] to cancel/exit");
@@ -181,20 +181,20 @@ public class ATM
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("\t================================");
-                Console.WriteLine("\t           ATM MACHINE          ");
-                Console.WriteLine("\t================================");
-                Console.WriteLine("\t              MENU              ");
+                CenterLine("================================");
+                CenterLine("ATM MACHINE");
+                CenterLine("================================");
+                CenterLine("MENU");
                 Console.ResetColor();
-                Console.WriteLine("\n\tWellcome " + currentAccount.getName());
-                Console.WriteLine("\n\n\t  [1] Check Balance");
-                Console.WriteLine("\t  [2] Deposit");
-                Console.WriteLine("\t  [3] Withraw");
-                Console.WriteLine("\t  [4] Send");
-                Console.WriteLine("\t  [5] Transaction History");
-                Console.WriteLine("\t  [6] Profile");
-                Console.WriteLine("\t  [7] Logout");
-                Console.Write("\n\tEnter choice : ");
+                CenterLine("Welcome " + currentAccount.getName());
+                CenterLine("[1] Check Balance");
+                CenterLine("[2] Deposit");
+                CenterLine("[3] Withraw");
+                CenterLine("[4] Send");
+                CenterLine("[5] Transaction History");
+                CenterLine("[6] Profile");
+                CenterLine("[7] Logout");
+                CenterWrite("Enter choice : ");
                 int choice = Convert.ToInt16(Console.ReadLine());
                 if (choice == 1)
                     checkBalance();
@@ -231,17 +231,17 @@ public class ATM
 
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("\t================================");
-                Console.WriteLine("\t           ATM MACHINE          ");
-                Console.WriteLine("\t================================");
-                Console.WriteLine("\t            ADMIN MENU          ");
+                CenterLine("================================");
+                CenterLine("ATM MACHINE");
+                CenterLine("================================");
+                CenterLine("ADMIN MENU");
                 Console.ResetColor();
                 Console.WriteLine("\n\tADMIN");
-                Console.WriteLine("\n\n\t  [1] Create Account");
-                Console.WriteLine("\t  [2] Update Information");
-                Console.WriteLine("\t  [3] Delete User Information");
-                Console.WriteLine("\t  [4] Bank Statistic");
-                Console.WriteLine("\t  [5] Logout");
+                CenterLine("[1] Create Account");
+                CenterLine("[2] Update Information");
+                CenterLine("[3] Delete User Information");
+                CenterLine("[4] Bank Statistic");
+                CenterLine("[5] Logout");
 
                 Write("\n\t  ➤ ", ConsoleColor.Green);
                 int choice = Convert.ToInt16(Console.ReadLine());
@@ -282,10 +282,10 @@ public class ATM
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("\t================================");
-                Console.WriteLine("\t           ATM MACHINE          ");
-                Console.WriteLine("\t================================");
-                Console.WriteLine("\t             SEND            ");
+                CenterLine("================================");
+                CenterLine("ATM MACHINE");
+                CenterLine("================================");
+                CenterLine("SEND");
                 Console.ResetColor();
                 Console.WriteLine("\n\tEnter [Q] to cancel/exit");
                 Console.Write("\n\n\t  Send to ");
@@ -322,10 +322,10 @@ public class ATM
                 {
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("\t================================");
-                    Console.WriteLine("\t           ATM MACHINE          ");
-                    Console.WriteLine("\t================================");
-                    Console.WriteLine("\t             SEND            ");
+                    CenterLine("================================");
+                    CenterLine("ATM MACHINE");
+                    CenterLine("================================");
+                    CenterLine("SEND");
                     Console.ResetColor();
                     Console.WriteLine("\n\tEnter [Q] to cancel/exit");
                     Console.Write("\n\n\t  Send to ");
@@ -373,10 +373,10 @@ public class ATM
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("\t================================");
-            Console.WriteLine("\t           ATM MACHINE          ");
-            Console.WriteLine("\t================================");
-            Console.WriteLine("\t          BANK STATISTIC        ");
+            CenterLine("================================");
+            CenterLine("ATM MACHINE");
+            CenterLine("================================");
+            CenterLine("BANK STATISTIC");
             Console.ResetColor();
             WriteLine("\n\n\t  Total users : " + accounts.Count(), ConsoleColor.Green);
             decimal totalMoney = 0;
@@ -400,10 +400,10 @@ public class ATM
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("\t================================");
-                Console.WriteLine("\t           ATM MACHINE          ");
-                Console.WriteLine("\t================================");
-                Console.WriteLine("\t             WITHDRAW            ");
+                CenterLine("================================");
+                CenterLine("ATM MACHINE");
+                CenterLine("================================");
+                CenterLine("WITHDRAW");
                 Console.ResetColor();
                 Console.WriteLine("\n\tEnter [Q] to cancel/exit");
                 Console.Write("\n\n\t  Ammount : ");
@@ -455,10 +455,10 @@ public class ATM
     {
         Console.Clear();
         Console.ForegroundColor = ConsoleColor.Cyan;
-        Console.WriteLine("\t================================");
-        Console.WriteLine("\t           ATM MACHINE          ");
-        Console.WriteLine("\t================================");
-        Console.WriteLine("\t             BALANCE            ");
+        CenterLine("================================");
+        CenterLine("ATM MACHINE");
+        CenterLine("================================");
+        CenterLine("BALANCE");
         Console.ResetColor();
         Console.Write("\n\n\t  Balance : ₱");
         Console.WriteLine(currentAccount.getBalance().ToString("N2"));
@@ -474,10 +474,10 @@ public class ATM
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("\t================================");
-                Console.WriteLine("\t           ATM MACHINE          ");
-                Console.WriteLine("\t================================");
-                Console.WriteLine("\t             DEPOSIT            ");
+                CenterLine("================================");
+                CenterLine("ATM MACHINE");
+                CenterLine("================================");
+                CenterLine("DEPOSIT");
                 Console.ResetColor();
                 Console.WriteLine("\n\tEnter [Q] to cancel/exit");
                 Console.Write("\n\n\t  Ammount : ₱");
@@ -525,16 +525,16 @@ public class ATM
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("\t================================");
-            Console.WriteLine("\t           ATM MACHINE          ");
-            Console.WriteLine("\t================================");
-            Console.WriteLine("\t             PROFILE            ");
+            CenterLine("================================");
+            CenterLine("ATM MACHINE");
+            CenterLine("================================");
+            CenterLine("PROFILE");
             Console.ResetColor();
             Console.WriteLine("\n\n\t  " + currentAccount.getName());
             Console.WriteLine("\t  " + currentAccount.getNumber());
             Console.WriteLine("\t  PIN : " + currentAccount.getPIN());
             Console.WriteLine("\n\t  [1] Change Info");
-            Console.WriteLine("\t  [2] Exit");
+            CenterLine("[2] Exit");
             Write("\n\t  ➤ ", ConsoleColor.Green);
             int choice = int.Parse(Console.ReadLine());
             if (choice == 1)
@@ -552,15 +552,15 @@ public class ATM
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("\t================================");
-            Console.WriteLine("\t           ATM MACHINE          ");
-            Console.WriteLine("\t================================");
-            Console.WriteLine("\t             PROFILE            ");
+            CenterLine("================================");
+            CenterLine("ATM MACHINE");
+            CenterLine("================================");
+            CenterLine("PROFILE");
             Console.ResetColor();
             Console.WriteLine("\n\tUpadte Profile");
-            Console.WriteLine("\n\n\t  [1] Name");
-            Console.WriteLine("\t  [2] PIN");
-            Console.WriteLine("\t  [3] Exit");
+            CenterLine("[1] Name");
+            CenterLine("[2] PIN");
+            CenterLine("[3] Exit");
             Write("\n\t  ➤ ", ConsoleColor.Green);
             int choice = int.Parse(Console.ReadLine());
             //UPDATE NAME
@@ -583,10 +583,10 @@ public class ATM
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("\t================================");
-            Console.WriteLine("\t           ATM MACHINE          ");
-            Console.WriteLine("\t================================");
-            Console.WriteLine("\t           UPDATE NAME          ");
+            CenterLine("================================");
+            CenterLine("ATM MACHINE");
+            CenterLine("================================");
+            CenterLine("UPDATE NAME");
             Console.ResetColor();
             Console.WriteLine("\n\tEnter [Q] to cancel/exit");
             Console.Write("\n\n\t  Name : ");
@@ -617,10 +617,10 @@ public class ATM
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("\t================================");
-            Console.WriteLine("\t           ATM MACHINE          ");
-            Console.WriteLine("\t================================");
-            Console.WriteLine("\t           UPDATE PIN           ");
+            CenterLine("================================");
+            CenterLine("ATM MACHINE");
+            CenterLine("================================");
+            CenterLine("UPDATE PIN");
             Console.ResetColor();
             Console.WriteLine("\n\tEnter [Q] to cancel/exit");
             WriteLine("\n\t  Enter a 6 digit PIN", ConsoleColor.Gray);
@@ -658,9 +658,9 @@ public class ATM
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("\t================================");
-            Console.WriteLine("\t           ATM MACHINE          ");
-            Console.WriteLine("\t================================");
+            CenterLine("================================");
+            CenterLine("ATM MACHINE");
+            CenterLine("================================");
             Console.WriteLine("\t              Login             ");
             Console.ResetColor();
 
@@ -722,10 +722,10 @@ public class ATM
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("\t================================");
-                Console.WriteLine("\t           ATM MACHINE          ");
-                Console.WriteLine("\t================================");
-                Console.WriteLine("\t          Create Account        ");
+                CenterLine("================================");
+                CenterLine("ATM MACHINE");
+                CenterLine("================================");
+                CenterLine("Create Account");
                 Console.ResetColor();
                 Console.WriteLine("\n\tEnter [Q] to cancel/exit");
 
@@ -800,6 +800,27 @@ public class ATM
             }
             
         }
+    }
+
+    // Centers menu and heading text in the console window.
+    private void CenterLine(string text)
+    {
+        int leftPadding = Math.Max(0, (Console.WindowWidth - text.Length) / 2);
+        Console.WriteLine(new string(' ', leftPadding) + text);
+    }
+
+    private void CenterWrite(string text)
+    {
+        int leftPadding = Math.Max(0, (Console.WindowWidth - text.Length) / 2);
+        Console.Write(new string(' ', leftPadding) + text);
+    }
+
+    private void CenterWrite(string text, ConsoleColor color)
+    {
+        int leftPadding = Math.Max(0, (Console.WindowWidth - text.Length) / 2);
+        Console.ForegroundColor = color;
+        Console.Write(new string(' ', leftPadding) + text);
+        Console.ResetColor();
     }
 
     public void Write(string text, ConsoleColor color)
