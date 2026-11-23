@@ -30,11 +30,11 @@ public class ATM
                 CenterLine("================================");
                 Console.ResetColor();
 
-                CenterLine("[1] Login");
-                CenterLine("[2] Create Account");
-                CenterLine("[3] Admin");
-                CenterLine("[4] Exit");
-                CenterWrite("Enter choice : ");
+                BlockLine("[1] Login");
+                BlockLine("[2] Create Account");
+                BlockLine("[3] Admin");
+                BlockLine("[4] Exit");
+                BlockWrite("Enter choice : ");
 
                 int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -51,16 +51,17 @@ public class ATM
             catch (Exception)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\n\tInvalid Input");
+                Console.WriteLine("\n" + Pad() + "Invalid Input");
                 Console.ResetColor();
                 Console.ReadKey();
             }
         }
 
         Console.ForegroundColor = ConsoleColor.Cyan;
-        Console.WriteLine("\n  ==============================================");
-        Console.WriteLine("      THANK YOU FOR USING ATM BANKING SYSTEM    ");
-        Console.WriteLine("  ==============================================");
+        Console.WriteLine();
+        CenterLine("==============================================");
+        CenterLine("THANK YOU FOR USING ATM BANKING SYSTEM");
+        CenterLine("==============================================");
         Console.ResetColor();
         Console.ReadKey();
     }
@@ -74,11 +75,11 @@ public class ATM
             CenterLine("================================");
             CenterLine("ATM MACHINE");
             CenterLine("================================");
-            Console.WriteLine("\t              Login             ");
+            CenterLine("Login");
             Console.ResetColor();
 
-            Console.WriteLine("\n\tEnter [Q] to cancel/exit");
-            Console.Write("\n\n\t  Account Number : ");
+            Console.WriteLine("\n" + Pad() + "Enter [Q] to cancel/exit");
+            Console.Write("\n\n" + Pad() + "Account Number : ");
 
             string num = Console.ReadLine();
 
@@ -87,7 +88,7 @@ public class ATM
                 return;
             }
 
-            Console.Write("\n\t  Enter PIN      : ");
+            Console.Write("\n" + Pad() + "Enter PIN      : ");
             string pin = Console.ReadLine();
 
             if (pin == "Q" || pin == "q")
@@ -110,7 +111,7 @@ public class ATM
             if (found)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("\n\tLogin successful!");
+                Console.WriteLine("\n" + Pad() + "Login successful!");
                 Console.ResetColor();
 
                 Console.ReadKey();
@@ -120,7 +121,7 @@ public class ATM
             }
 
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("\n\tWrong number or PIN");
+            Console.WriteLine("\n" + Pad() + "Wrong number or PIN");
             Console.ResetColor();
 
             Console.ReadKey();
@@ -139,8 +140,8 @@ public class ATM
             CenterLine("Admin Login");
             Console.ResetColor();
 
-            Console.WriteLine("\n\tEnter [Q] to cancel/exit");
-            Console.Write("\n\n\t  Username       : ");
+            Console.WriteLine("\n" + Pad() + "Enter [Q] to cancel/exit");
+            Console.Write("\n\n" + Pad() + "Username       : ");
             string username = Console.ReadLine();
 
             if (username == "Q" || username == "q")
@@ -148,7 +149,7 @@ public class ATM
                 return;
             }
 
-            Console.Write("\n\t  Enter password : ");
+            Console.Write("\n" + Pad() + "Enter password : ");
             string pass = Console.ReadLine();
 
             if (pass == "Q" || pass == "q")
@@ -159,7 +160,7 @@ public class ATM
             if (username == adminUsername && pass == adminPassword)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("\n\tLogin successful!");
+                Console.Write("\n" + Pad() + "Login successful!");
                 Console.ResetColor();
                 Console.ReadKey();
                 adminMenu(accounts);
@@ -167,7 +168,7 @@ public class ATM
             }
 
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write("\n\tWrong number or PIN");
+            Console.Write("\n" + Pad() + "Wrong number or PIN");
             Console.ResetColor();
             Console.ReadKey();
         }
@@ -187,14 +188,14 @@ public class ATM
                 CenterLine("MENU");
                 Console.ResetColor();
                 CenterLine("Wellcome " + currentAccount.getName());
-                CenterLine("[1] Check Balance");
-                CenterLine("[2] Deposit");
-                CenterLine("[3] Withraw");
-                CenterLine("[4] Send");
-                CenterLine("[5] Transaction History");
-                CenterLine("[6] Profile");
-                CenterLine("[7] Logout");
-                CenterWrite("Enter choice : ");
+                BlockLine("[1] Check Balance");
+                BlockLine("[2] Deposit");
+                BlockLine("[3] Withraw");
+                BlockLine("[4] Send");
+                BlockLine("[5] Transaction History");
+                BlockLine("[6] Profile");
+                BlockLine("[7] Logout");
+                BlockWrite("Enter choice : ");
                 int choice = Convert.ToInt16(Console.ReadLine());
                 if (choice == 1)
                     checkBalance();
@@ -236,14 +237,14 @@ public class ATM
                 CenterLine("================================");
                 CenterLine("ADMIN MENU");
                 Console.ResetColor();
-                Console.WriteLine("\n\tADMIN");
-                CenterLine("[1] Create Account");
-                CenterLine("[2] Update Information");
-                CenterLine("[3] Delete User Information");
-                CenterLine("[4] Bank Statistic");
-                CenterLine("[5] Logout");
+                Console.WriteLine("\n" + Pad() + "ADMIN");
+                BlockLine("[1] Create Account");
+                BlockLine("[2] Update Information");
+                BlockLine("[3] Delete User Information");
+                BlockLine("[4] Bank Statistic");
+                BlockLine("[5] Logout");
 
-                Write("\n\t  ➤ ", ConsoleColor.Green);
+                Write("\n" + Pad() + "➤ ", ConsoleColor.Green);
                 int choice = Convert.ToInt16(Console.ReadLine());
                 if (choice == 1)
                     createUserAccount(accounts);
@@ -265,7 +266,7 @@ public class ATM
             catch (Exception)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("Invalid Input");
+                Console.Write(Pad() + "Invalid Input");
                 Console.ResetColor();
                 Console.ReadKey();
                 continue;
@@ -287,9 +288,9 @@ public class ATM
                 CenterLine("================================");
                 CenterLine("SEND");
                 Console.ResetColor();
-                Console.WriteLine("\n\tEnter [Q] to cancel/exit");
-                Console.Write("\n\n\t  Send to ");
-                Console.Write("\n\n\t    Acc. Number : ");
+                Console.WriteLine("\n" + Pad() + "Enter [Q] to cancel/exit");
+                Console.Write("\n\n" + Pad() + "Send to ");
+                Console.Write("\n\n" + Pad() + "  Acc. Number : ");
                 string input = Console.ReadLine();
                 if (input == "Q" || input == "q")
                     return;
@@ -306,13 +307,13 @@ public class ATM
                 }
                 if(found)
                 {
-                    Console.WriteLine("\n\n\t    Name   : " + receiver.getName());
+                    Console.WriteLine("\n\n" + Pad() + "  Name   : " + receiver.getName());
               
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("\n\tAccount not found");
+                    Console.Write("\n" + Pad() + "Account not found");
                     Console.ResetColor();
                     Console.ReadKey();
                     continue;
@@ -327,28 +328,28 @@ public class ATM
                     CenterLine("================================");
                     CenterLine("SEND");
                     Console.ResetColor();
-                    Console.WriteLine("\n\tEnter [Q] to cancel/exit");
-                    Console.Write("\n\n\t  Send to ");
-                    Console.Write("\n\n\t    Acc. Number : "+input);
-                    Console.WriteLine("\n\n\t     Name   : " + receiver.getName());
+                    Console.WriteLine("\n" + Pad() + "Enter [Q] to cancel/exit");
+                    Console.Write("\n\n" + Pad() + "Send to ");
+                    Console.Write("\n\n" + Pad() + "  Acc. Number : "+input);
+                    Console.WriteLine("\n\n" + Pad() + "   Name   : " + receiver.getName());
                     decimal amount;
-                    Console.Write("\n\t     Amount : ");
+                    Console.Write("\n" + Pad() + "   Amount : ");
                     amount = Convert.ToDecimal(Console.ReadLine());
                     if (amount <= 0)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write("\n\tInvalid amount");
+                        Console.Write("\n" + Pad() + "Invalid amount");
                         Console.ResetColor(); Console.ReadKey(); continue;
                     }
                     if (amount > currentAccount.getBalance())
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write("\n\tInsuficient balance");
+                        Console.Write("\n" + Pad() + "Insuficient balance");
                         Console.ResetColor(); Console.ReadKey(); continue;
                     }
                     currentAccount.Transfer(receiver, amount);
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.Write("\n\tTransfer success");
+                    Console.Write("\n" + Pad() + "Transfer success");
                     Console.ResetColor(); Console.ReadKey(); return;
                 }
                 
@@ -358,7 +359,7 @@ public class ATM
             catch (Exception)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("\n\tInvalid input");
+                Console.Write("\n" + Pad() + "Invalid input");
                 Console.ResetColor();
                 Console.ReadKey();
                 continue;
@@ -378,14 +379,14 @@ public class ATM
             CenterLine("================================");
             CenterLine("BANK STATISTIC");
             Console.ResetColor();
-            WriteLine("\n\n\t  Total users : " + accounts.Count(), ConsoleColor.Green);
+            WriteLine("\n\n" + Pad() + "Total users : " + accounts.Count(), ConsoleColor.Green);
             decimal totalMoney = 0;
             foreach (Account acc in accounts)
             {
                 totalMoney += acc.getBalance();
             }
-            WriteLine("\n\t  Total money : ₱" + totalMoney.ToString("N2"), ConsoleColor.Green);
-            Console.Write("\n\tEnter [Q] to return ");
+            WriteLine("\n" + Pad() + "Total money : ₱" + totalMoney.ToString("N2"), ConsoleColor.Green);
+            Console.Write("\n" + Pad() + "Enter [Q] to return ");
             string choice = Console.ReadLine();
             if (choice == "Q" || choice == "q")
                 return;
@@ -405,8 +406,8 @@ public class ATM
                 CenterLine("================================");
                 CenterLine("WITHDRAW");
                 Console.ResetColor();
-                Console.WriteLine("\n\tEnter [Q] to cancel/exit");
-                Console.Write("\n\n\t  Ammount : ");
+                Console.WriteLine("\n" + Pad() + "Enter [Q] to cancel/exit");
+                Console.Write("\n\n" + Pad() + "Ammount : ");
                 string input = Console.ReadLine();
                 if (input == "Q" || input == "q")
                     return;
@@ -415,7 +416,7 @@ public class ATM
                 if (!decimal.TryParse(input, out amount))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("\n\tInvalid input");
+                    Console.Write("\n" + Pad() + "Invalid input");
                     Console.ResetColor();
                     Console.ReadKey();
                     continue;
@@ -423,18 +424,18 @@ public class ATM
                 if (amount <= 0)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("\n\tInvalid amount");
+                    Console.Write("\n" + Pad() + "Invalid amount");
                     Console.ResetColor(); Console.ReadKey(); continue;
                 }
                 if (amount > currentAccount.getBalance())
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("\n\tInsuficient balance");
+                    Console.Write("\n" + Pad() + "Insuficient balance");
                     Console.ResetColor(); Console.ReadKey(); continue;
                 }
                 currentAccount.Withdraw(amount);
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("\n\tWithdraw success");
+                Console.Write("\n" + Pad() + "Withdraw success");
                 Console.ResetColor(); Console.ReadKey(); return;
 
 
@@ -442,7 +443,7 @@ public class ATM
             catch (Exception)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("\n\tInvalid input");
+                Console.Write("\n" + Pad() + "Invalid input");
                 Console.ResetColor();
                 Console.ReadKey();
                 continue;
@@ -460,9 +461,9 @@ public class ATM
         CenterLine("================================");
         CenterLine("BALANCE");
         Console.ResetColor();
-        Console.Write("\n\n\t  Balance : ₱");
+        Console.Write("\n\n" + Pad() + "Balance : ₱");
         Console.WriteLine(currentAccount.getBalance().ToString("N2"));
-        Console.Write("\n\n\tPress any key to return...");
+        Console.Write("\n\n" + Pad() + "Press any key to return...");
         Console.ReadKey();
     }
 
@@ -479,8 +480,8 @@ public class ATM
                 CenterLine("================================");
                 CenterLine("DEPOSIT");
                 Console.ResetColor();
-                Console.WriteLine("\n\tEnter [Q] to cancel/exit");
-                Console.Write("\n\n\t  Ammount : ₱");
+                Console.WriteLine("\n" + Pad() + "Enter [Q] to cancel/exit");
+                Console.Write("\n\n" + Pad() + "Ammount : ₱");
                 string input = Console.ReadLine();
                 if (input == "Q" || input == "q")
                     return;
@@ -489,7 +490,7 @@ public class ATM
                 if (!decimal.TryParse(input, out amount))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("\n\tInvalid amount");
+                    Console.Write("\n" + Pad() + "Invalid amount");
                     Console.ResetColor();
                     Console.ReadKey();
                     continue;
@@ -497,12 +498,12 @@ public class ATM
                 if (amount <= 0)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("\n\tInvalid amount");
+                    Console.Write("\n" + Pad() + "Invalid amount");
                     Console.ResetColor(); Console.ReadKey(); continue;
                 }
                 currentAccount.Deposit(amount);
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("\n\tDeposit success");
+                Console.Write("\n" + Pad() + "Deposit success");
                 Console.ResetColor(); Console.ReadKey(); return;
 
 
@@ -510,7 +511,7 @@ public class ATM
             catch (Exception)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("\n\tInvalid input");
+                Console.Write("\n" + Pad() + "Invalid input");
                 Console.ResetColor();
                 Console.ReadKey();
                 continue;
@@ -530,12 +531,12 @@ public class ATM
             CenterLine("================================");
             CenterLine("PROFILE");
             Console.ResetColor();
-            Console.WriteLine("\n\n\t  " + currentAccount.getName());
-            Console.WriteLine("\t  " + currentAccount.getNumber());
-            Console.WriteLine("\t  PIN : " + currentAccount.getPIN());
-            Console.WriteLine("\n\t  [1] Change Info");
-            CenterLine("[2] Exit");
-            Write("\n\t  ➤ ", ConsoleColor.Green);
+            Console.WriteLine("\n\n" + Pad() + "" + currentAccount.getName());
+            Console.WriteLine(Pad() + "" + currentAccount.getNumber());
+            Console.WriteLine(Pad() + "PIN : " + currentAccount.getPIN());
+            Console.WriteLine("\n" + Pad() + "[1] Change Info");
+            BlockLine("[2] Exit");
+            Write("\n" + Pad() + "➤ ", ConsoleColor.Green);
             int choice = int.Parse(Console.ReadLine());
             if (choice == 1)
                 updateAcc(accounts);
@@ -557,11 +558,11 @@ public class ATM
             CenterLine("================================");
             CenterLine("PROFILE");
             Console.ResetColor();
-            Console.WriteLine("\n\tUpadte Profile");
-            CenterLine("[1] Name");
-            CenterLine("[2] PIN");
-            CenterLine("[3] Exit");
-            Write("\n\t  ➤ ", ConsoleColor.Green);
+            Console.WriteLine("\n" + Pad() + "Upadte Profile");
+            BlockLine("[1] Name");
+            BlockLine("[2] PIN");
+            BlockLine("[3] Exit");
+            Write("\n" + Pad() + "➤ ", ConsoleColor.Green);
             int choice = int.Parse(Console.ReadLine());
             //UPDATE NAME
             if (choice == 1)
@@ -588,8 +589,8 @@ public class ATM
             CenterLine("================================");
             CenterLine("UPDATE NAME");
             Console.ResetColor();
-            Console.WriteLine("\n\tEnter [Q] to cancel/exit");
-            Console.Write("\n\n\t  Name : ");
+            Console.WriteLine("\n" + Pad() + "Enter [Q] to cancel/exit");
+            Console.Write("\n\n" + Pad() + "Name : ");
             string name = Console.ReadLine();
             if (name == "Q" || name == "q")
             {
@@ -598,13 +599,13 @@ public class ATM
             if (name.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
             {
                 currentAccount.setName(name);
-                Write("\n\n\tName updated successfuly", ConsoleColor.Green);
+                Write("\n\n" + Pad() + "Name updated successfuly", ConsoleColor.Green);
                 Console.ReadKey();
                 return;
             }
             else
             {
-                Write("\n\n\tInvalid name. Numbers and special characters are not allowed", ConsoleColor.Red);
+                Write("\n\n" + Pad() + "Invalid name. Numbers and special characters are not allowed", ConsoleColor.Red);
                 Console.ReadKey();
                 continue;
             }
@@ -622,9 +623,9 @@ public class ATM
             CenterLine("================================");
             CenterLine("UPDATE PIN");
             Console.ResetColor();
-            Console.WriteLine("\n\tEnter [Q] to cancel/exit");
-            WriteLine("\n\t  Enter a 6 digit PIN", ConsoleColor.Gray);
-            Console.Write("\t  New PIN :");
+            Console.WriteLine("\n" + Pad() + "Enter [Q] to cancel/exit");
+            WriteLine("\n" + Pad() + "Enter a 6 digit PIN", ConsoleColor.Gray);
+            Console.Write(Pad() + "New PIN :");
             string pin = Console.ReadLine();
             if (pin == "Q" || pin == "q")
             {
@@ -633,19 +634,19 @@ public class ATM
             if (!long.TryParse(pin, out _))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("\n\n\tInvalid PIN! Numbers only.");
+                Console.Write("\n\n" + Pad() + "Invalid PIN! Numbers only.");
                 Console.ResetColor();
             }
             if (pin.Length == 6 && long.TryParse(pin, out _))
             {
                 currentAccount.setPIN(pin);
-                Write("\n\n\tPIN updated successfuly", ConsoleColor.Green);
+                Write("\n\n" + Pad() + "PIN updated successfuly", ConsoleColor.Green);
                 Console.ReadKey();
                 return;
             }
             else
             {
-                Write("\n\n\tPIN must contain exactly 6 numbers!", ConsoleColor.Red);
+                Write("\n\n" + Pad() + "PIN must contain exactly 6 numbers!", ConsoleColor.Red);
                 Console.ReadKey();
                 continue;
             }
@@ -661,11 +662,11 @@ public class ATM
             CenterLine("================================");
             CenterLine("ATM MACHINE");
             CenterLine("================================");
-            Console.WriteLine("\t              Login             ");
+            CenterLine("Login");
             Console.ResetColor();
 
-            Console.WriteLine("\n\tEnter [Q] to cancel/exit");
-            Console.Write("\n\n\t  Account Number : ");
+            Console.WriteLine("\n" + Pad() + "Enter [Q] to cancel/exit");
+            Console.Write("\n\n" + Pad() + "Account Number : ");
 
             string num = Console.ReadLine();
 
@@ -674,7 +675,7 @@ public class ATM
                 return;
             }
 
-            Console.Write("\n\t  Enter PIN      : ");
+            Console.Write("\n" + Pad() + "Enter PIN      : ");
             string pin = Console.ReadLine();
 
             if (pin == "Q" || pin == "q")
@@ -697,7 +698,7 @@ public class ATM
             if (found)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("\n\tLogin successful!");
+                Console.WriteLine("\n" + Pad() + "Login successful!");
                 Console.ResetColor();
 
                 Console.ReadKey();
@@ -707,7 +708,7 @@ public class ATM
             }
 
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("\n\tWrong number or PIN");
+            Console.WriteLine("\n" + Pad() + "Wrong number or PIN");
             Console.ResetColor();
 
             Console.ReadKey();
@@ -727,13 +728,13 @@ public class ATM
                 CenterLine("================================");
                 CenterLine("Create Account");
                 Console.ResetColor();
-                Console.WriteLine("\n\tEnter [Q] to cancel/exit");
+                Console.WriteLine("\n" + Pad() + "Enter [Q] to cancel/exit");
 
                 Account n = new Account(null, null, null);
                 string accNum = accountNumber.ToString();
 
                 //Name
-                Console.Write("\n\n\t  Name      : ");
+                Console.Write("\n\n" + Pad() + "Name      : ");
                 string name = Console.ReadLine();
                 if (name == "Q" || name == "q")
                 {
@@ -746,14 +747,14 @@ public class ATM
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("\n\tInvalid name. Numbers and special characters are not allowed");
+                    Console.Write("\n" + Pad() + "Invalid name. Numbers and special characters are not allowed");
                     Console.ResetColor();
                     Console.ReadKey();
                     continue;
                 }
 
                 //PIN
-                Console.Write("\n\t  Enter PIN : ");
+                Console.Write("\n" + Pad() + "Enter PIN : ");
                 string pin = Console.ReadLine();
                 if (pin == "Q" || pin == "q")
                 {
@@ -762,7 +763,7 @@ public class ATM
                 if (!long.TryParse(pin, out _))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("Invalid PIN! Numbers only.");
+                    Console.Write(Pad() + "Invalid PIN! Numbers only.");
                     Console.ResetColor();
                 }
                 if (pin.Length == 6 && long.TryParse(pin, out _))
@@ -770,19 +771,19 @@ public class ATM
                     n.setPIN(pin);
                     n.setNumber(accNum); //Acc Number
                     accounts.Add(n);
-                    Console.WriteLine("\n\tAccount Number: " + accNum);
+                    Console.WriteLine("\n" + Pad() + "Account Number: " + accNum);
                     accountNumber++;
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("\n\tAccount created successfuly");
+                    Console.WriteLine("\n" + Pad() + "Account created successfuly");
                     Console.ResetColor();
-                    Console.WriteLine("\n\nPress any key to proceed to login page....");
+                    Console.WriteLine("\n\n" + Pad() + "Press any key to proceed to login page....");
                     Console.ReadKey();
                     return;
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("PIN must contain exactly 6 numbers!");
+                    Console.WriteLine(Pad() + "PIN must contain exactly 6 numbers!");
                     Console.ResetColor();
                     Console.ReadKey();
                     continue;
@@ -793,13 +794,32 @@ public class ATM
             catch (Exception)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Invalid Input");
+                Console.WriteLine(Pad() + "Invalid Input");
                 Console.ResetColor();
                 Console.ReadKey();
                 continue;
             }
             
         }
+    }
+
+    // Width of the centered block (matches the "====" banner).
+    private const int BlockWidth = 32;
+
+    // Left margin that centers the block in the current console window.
+    private string Pad()
+    {
+        return new string(' ', Math.Max(0, (Console.WindowWidth - BlockWidth) / 2));
+    }
+
+    private void BlockLine(string text)
+    {
+        Console.WriteLine(Pad() + text);
+    }
+
+    private void BlockWrite(string text)
+    {
+        Console.Write(Pad() + text);
     }
 
     // Centers menu and heading text in the console window.
