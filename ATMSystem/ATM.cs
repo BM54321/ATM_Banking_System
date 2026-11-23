@@ -186,7 +186,7 @@ public class ATM
                 CenterLine("================================");
                 CenterLine("MENU");
                 Console.ResetColor();
-                CenterLine("Welcome " + currentAccount.getName());
+                CenterLine("Wellcome " + currentAccount.getName());
                 CenterLine("[1] Check Balance");
                 CenterLine("[2] Deposit");
                 CenterLine("[3] Withraw");
