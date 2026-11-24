@@ -28,13 +28,15 @@ public class ATM
                 CenterLine("================================");
                 CenterLine("ATM MACHINE");
                 CenterLine("================================");
+                CenterLine("MENU");
                 Console.ResetColor();
+                Console.WriteLine("\n");
 
                 BlockLine("[1] Login");
                 BlockLine("[2] Create Account");
                 BlockLine("[3] Admin");
                 BlockLine("[4] Exit");
-                BlockWrite("Enter choice : ");
+                ChoicePrompt();
 
                 int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -51,7 +53,7 @@ public class ATM
             catch (Exception)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\n" + Pad() + "Invalid Input");
+                Console.Write("\n" + Pad() + "Invalid Input");
                 Console.ResetColor();
                 Console.ReadKey();
             }
@@ -111,7 +113,7 @@ public class ATM
             if (found)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("\n" + Pad() + "Login successful!");
+                Console.Write("\n" + Pad() + "Login successful!");
                 Console.ResetColor();
 
                 Console.ReadKey();
@@ -121,7 +123,7 @@ public class ATM
             }
 
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("\n" + Pad() + "Wrong number or PIN");
+            Console.Write("\n" + Pad() + "Wrong number or PIN");
             Console.ResetColor();
 
             Console.ReadKey();
@@ -185,9 +187,9 @@ public class ATM
                 CenterLine("================================");
                 CenterLine("ATM MACHINE");
                 CenterLine("================================");
-                CenterLine("MENU");
+                CenterLine("USER MENU");
                 Console.ResetColor();
-                CenterLine("Wellcome " + currentAccount.getName());
+                Console.WriteLine("\n\n" + Pad() + "Wellcome " + currentAccount.getName() + "\n\n");
                 BlockLine("[1] Check Balance");
                 BlockLine("[2] Deposit");
                 BlockLine("[3] Withraw");
@@ -195,7 +197,7 @@ public class ATM
                 BlockLine("[5] Transaction History");
                 BlockLine("[6] Profile");
                 BlockLine("[7] Logout");
-                BlockWrite("Enter choice : ");
+                ChoicePrompt();
                 int choice = Convert.ToInt16(Console.ReadLine());
                 if (choice == 1)
                     checkBalance();
@@ -237,14 +239,14 @@ public class ATM
                 CenterLine("================================");
                 CenterLine("ADMIN MENU");
                 Console.ResetColor();
-                Console.WriteLine("\n" + Pad() + "ADMIN");
+                Console.WriteLine("\n");
                 BlockLine("[1] Create Account");
                 BlockLine("[2] Update Information");
                 BlockLine("[3] Delete User Information");
                 BlockLine("[4] Bank Statistic");
                 BlockLine("[5] Logout");
 
-                Write("\n" + Pad() + "➤ ", ConsoleColor.Green);
+                ChoicePrompt();
                 int choice = Convert.ToInt16(Console.ReadLine());
                 if (choice == 1)
                     createUserAccount(accounts);
@@ -534,9 +536,10 @@ public class ATM
             Console.WriteLine("\n\n" + Pad() + "" + currentAccount.getName());
             Console.WriteLine(Pad() + "" + currentAccount.getNumber());
             Console.WriteLine(Pad() + "PIN : " + currentAccount.getPIN());
-            Console.WriteLine("\n" + Pad() + "[1] Change Info");
+            Console.WriteLine();
+            BlockLine("[1] Change Info");
             BlockLine("[2] Exit");
-            Write("\n" + Pad() + "➤ ", ConsoleColor.Green);
+            ChoicePrompt();
             int choice = int.Parse(Console.ReadLine());
             if (choice == 1)
                 updateAcc(accounts);
@@ -562,7 +565,7 @@ public class ATM
             BlockLine("[1] Name");
             BlockLine("[2] PIN");
             BlockLine("[3] Exit");
-            Write("\n" + Pad() + "➤ ", ConsoleColor.Green);
+            ChoicePrompt();
             int choice = int.Parse(Console.ReadLine());
             //UPDATE NAME
             if (choice == 1)
@@ -698,7 +701,7 @@ public class ATM
             if (found)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("\n" + Pad() + "Login successful!");
+                Console.Write("\n" + Pad() + "Login successful!");
                 Console.ResetColor();
 
                 Console.ReadKey();
@@ -708,7 +711,7 @@ public class ATM
             }
 
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("\n" + Pad() + "Wrong number or PIN");
+            Console.Write("\n" + Pad() + "Wrong number or PIN");
             Console.ResetColor();
 
             Console.ReadKey();
@@ -771,19 +774,19 @@ public class ATM
                     n.setPIN(pin);
                     n.setNumber(accNum); //Acc Number
                     accounts.Add(n);
-                    Console.WriteLine("\n" + Pad() + "Account Number: " + accNum);
+                    Console.Write("\n" + Pad() + "Account Number: " + accNum);
                     accountNumber++;
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("\n" + Pad() + "Account created successfuly");
+                    Console.Write("\n" + Pad() + "Account created successfuly");
                     Console.ResetColor();
-                    Console.WriteLine("\n\n" + Pad() + "Press any key to proceed to login page....");
+                    Console.Write("\n\n" + Pad() + "Press any key to proceed to login page....");
                     Console.ReadKey();
                     return;
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine(Pad() + "PIN must contain exactly 6 numbers!");
+                    Console.Write(Pad() + "PIN must contain exactly 6 numbers!");
                     Console.ResetColor();
                     Console.ReadKey();
                     continue;
@@ -794,7 +797,7 @@ public class ATM
             catch (Exception)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(Pad() + "Invalid Input");
+                Console.Write(Pad() + "Invalid Input");
                 Console.ResetColor();
                 Console.ReadKey();
                 continue;
@@ -814,12 +817,13 @@ public class ATM
 
     private void BlockLine(string text)
     {
-        Console.WriteLine(Pad() + text);
+        Console.WriteLine(Pad() + "  " + text);
     }
 
-    private void BlockWrite(string text)
+    // Blank line, then the ➤ prompt in line with the menu items.
+    private void ChoicePrompt()
     {
-        Console.Write(Pad() + text);
+        Console.Write("\n" + Pad() + "  ➤ ");
     }
 
     // Centers menu and heading text in the console window.
