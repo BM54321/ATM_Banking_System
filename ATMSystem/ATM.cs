@@ -24,6 +24,7 @@ public class ATM
             try
             {
                 Console.Clear();
+                spaceVertical();
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 CenterLine("================================");
                 CenterLine("ATM MACHINE");
@@ -47,8 +48,8 @@ public class ATM
                 else if (choice == 3)
                     loginAdmin(accounts);
                 else if (choice == 4)
-                    return;
-                
+                    break;
+
             }
             catch (Exception)
             {
@@ -73,6 +74,7 @@ public class ATM
         while (true)
         {
             Console.Clear();
+            spaceVertical();
             Console.ForegroundColor = ConsoleColor.Cyan;
             CenterLine("================================");
             CenterLine("ATM MACHINE");
@@ -135,6 +137,7 @@ public class ATM
         while (true)
         {
             Console.Clear();
+            spaceVertical();
             Console.ForegroundColor = ConsoleColor.Cyan;
             CenterLine("================================");
             CenterLine("ATM MACHINE");
@@ -183,6 +186,7 @@ public class ATM
             try
             {
                 Console.Clear();
+                spaceVertical();
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 CenterLine("================================");
                 CenterLine("ATM MACHINE");
@@ -214,13 +218,13 @@ public class ATM
                 else
                     continue;
 
-               
+
             }
             catch (Exception)
             {
-               
+
             }
-           
+
         }
     }
 
@@ -233,6 +237,7 @@ public class ATM
 
 
                 Console.Clear();
+                spaceVertical();
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 CenterLine("================================");
                 CenterLine("ATM MACHINE");
@@ -284,6 +289,7 @@ public class ATM
             try
             {
                 Console.Clear();
+                spaceVertical();
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 CenterLine("================================");
                 CenterLine("ATM MACHINE");
@@ -307,10 +313,10 @@ public class ATM
                         break;
                     }
                 }
-                if(found)
+                if (found)
                 {
                     Console.WriteLine("\n\n" + Pad() + "  Name   : " + receiver.getName());
-              
+
                 }
                 else
                 {
@@ -321,9 +327,10 @@ public class ATM
                     continue;
                 }
 
-                while(true)
+                while (true)
                 {
                     Console.Clear();
+                    spaceVertical();
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     CenterLine("================================");
                     CenterLine("ATM MACHINE");
@@ -332,7 +339,7 @@ public class ATM
                     Console.ResetColor();
                     Console.WriteLine("\n" + Pad() + "Enter [Q] to cancel/exit");
                     Console.Write("\n\n" + Pad() + "Send to ");
-                    Console.Write("\n\n" + Pad() + "  Acc. Number : "+input);
+                    Console.Write("\n\n" + Pad() + "  Acc. Number : " + input);
                     Console.WriteLine("\n\n" + Pad() + "   Name   : " + receiver.getName());
                     decimal amount;
                     Console.Write("\n" + Pad() + "   Amount : ");
@@ -354,7 +361,7 @@ public class ATM
                     Console.Write("\n" + Pad() + "Transfer success");
                     Console.ResetColor(); Console.ReadKey(); return;
                 }
-                
+
 
 
             }
@@ -375,6 +382,7 @@ public class ATM
         while (true)
         {
             Console.Clear();
+            spaceVertical();
             Console.ForegroundColor = ConsoleColor.Cyan;
             CenterLine("================================");
             CenterLine("ATM MACHINE");
@@ -402,6 +410,7 @@ public class ATM
             try
             {
                 Console.Clear();
+                spaceVertical();
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 CenterLine("================================");
                 CenterLine("ATM MACHINE");
@@ -457,6 +466,7 @@ public class ATM
     public void checkBalance()
     {
         Console.Clear();
+        spaceVertical();
         Console.ForegroundColor = ConsoleColor.Cyan;
         CenterLine("================================");
         CenterLine("ATM MACHINE");
@@ -476,6 +486,7 @@ public class ATM
             try
             {
                 Console.Clear();
+                spaceVertical();
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 CenterLine("================================");
                 CenterLine("ATM MACHINE");
@@ -527,6 +538,7 @@ public class ATM
         while (true)
         {
             Console.Clear();
+            spaceVertical();
             Console.ForegroundColor = ConsoleColor.Cyan;
             CenterLine("================================");
             CenterLine("ATM MACHINE");
@@ -555,6 +567,7 @@ public class ATM
         while (true)
         {
             Console.Clear();
+            spaceVertical();
             Console.ForegroundColor = ConsoleColor.Cyan;
             CenterLine("================================");
             CenterLine("ATM MACHINE");
@@ -586,6 +599,7 @@ public class ATM
         while (true)
         {
             Console.Clear();
+            spaceVertical();
             Console.ForegroundColor = ConsoleColor.Cyan;
             CenterLine("================================");
             CenterLine("ATM MACHINE");
@@ -620,6 +634,7 @@ public class ATM
         while (true)
         {
             Console.Clear();
+            spaceVertical();
             Console.ForegroundColor = ConsoleColor.Cyan;
             CenterLine("================================");
             CenterLine("ATM MACHINE");
@@ -661,6 +676,7 @@ public class ATM
         while (true)
         {
             Console.Clear();
+            spaceVertical();
             Console.ForegroundColor = ConsoleColor.Cyan;
             CenterLine("================================");
             CenterLine("ATM MACHINE");
@@ -725,6 +741,7 @@ public class ATM
             try
             {
                 Console.Clear();
+                spaceVertical();
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 CenterLine("================================");
                 CenterLine("ATM MACHINE");
@@ -792,7 +809,7 @@ public class ATM
                     continue;
                 }
 
-                
+
             }
             catch (Exception)
             {
@@ -802,7 +819,7 @@ public class ATM
                 Console.ReadKey();
                 continue;
             }
-            
+
         }
     }
 
@@ -859,5 +876,10 @@ public class ATM
         Console.ForegroundColor = color;
         Console.WriteLine(text);
         Console.ResetColor();
+    }
+
+    public void spaceVertical()
+    {
+        Console.WriteLine("\n\n\n\n\n");
     }
 }
