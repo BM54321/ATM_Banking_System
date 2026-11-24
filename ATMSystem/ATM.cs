@@ -342,7 +342,7 @@ public class ATM
                     Console.Write("\n\n" + Pad() + "  Acc. Number : " + input);
                     Console.WriteLine("\n\n" + Pad() + "   Name   : " + receiver.getName());
                     decimal amount;
-                    Console.Write("\n" + Pad() + "   Amount : ");
+                    Console.Write("\n" + Pad() + "   Amount : ₱");
                     amount = Convert.ToDecimal(Console.ReadLine());
                     if (amount <= 0)
                     {
@@ -418,7 +418,7 @@ public class ATM
                 CenterLine("WITHDRAW");
                 Console.ResetColor();
                 Console.WriteLine("\n" + Pad() + "Enter [Q] to cancel/exit");
-                Console.Write("\n\n" + Pad() + "Ammount : ");
+                Console.Write("\n\n" + Pad() + "Ammount : ₱");
                 string input = Console.ReadLine();
                 if (input == "Q" || input == "q")
                     return;
@@ -473,8 +473,9 @@ public class ATM
         CenterLine("================================");
         CenterLine("BALANCE");
         Console.ResetColor();
-        Console.Write("\n\n" + Pad() + "Balance : ₱");
-        Console.WriteLine(currentAccount.getBalance().ToString("N2"));
+        Console.Write("\n\n" + Pad() + "Balance : ");
+        Write("₱" + currentAccount.getBalance().ToString("N2"), ConsoleColor.Green);
+        Console.WriteLine();
         Console.Write("\n\n" + Pad() + "Press any key to return...");
         Console.ReadKey();
     }
@@ -840,7 +841,8 @@ public class ATM
     // Blank line, then the ➤ prompt in line with the menu items.
     private void ChoicePrompt()
     {
-        Console.Write("\n" + Pad() + "  ➤ ");
+        Console.Write("\n" + Pad() + "  ");
+        Write("➤ ", ConsoleColor.Green);
     }
 
     // Centers menu and heading text in the console window.
